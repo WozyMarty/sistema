@@ -1,0 +1,46 @@
+# Project: Project1
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o src/Cliente.o src/ItemManutencao.o src/Manutencao.o src/Mecanico.o src/Peca.o src/Veiculo.o
+LINKOBJ  = main.o src/Cliente.o src/ItemManutencao.o src/Manutencao.o src/Mecanico.o src/Peca.o src/Veiculo.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -L"C:/Users/acer/Downloads/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/lib" -static-libgcc include/Cliente.hpp include/ItemManutencao.hpp include/Manutencao.hpp include/Mecanico.hpp include/Peca.hpp include/Veiculo.hpp
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Users/acer/Downloads/sistema/SiStema_Oficina_Mecanica-main/sistema_manutencao_cpp/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"C:/Users/acer/Downloads/SFML-2.5.1-windows-gcc-7.3.0-mingw-64-bit/SFML-2.5.1/include" -I"C:/Users/acer/Downloads/sistema/SiStema_Oficina_Mecanica-main/sistema_manutencao_cpp/include"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+src/Cliente.o: src/Cliente.cpp
+	$(CPP) -c src/Cliente.cpp -o src/Cliente.o $(CXXFLAGS)
+
+src/ItemManutencao.o: src/ItemManutencao.cpp
+	$(CPP) -c src/ItemManutencao.cpp -o src/ItemManutencao.o $(CXXFLAGS)
+
+src/Manutencao.o: src/Manutencao.cpp
+	$(CPP) -c src/Manutencao.cpp -o src/Manutencao.o $(CXXFLAGS)
+
+src/Mecanico.o: src/Mecanico.cpp
+	$(CPP) -c src/Mecanico.cpp -o src/Mecanico.o $(CXXFLAGS)
+
+src/Peca.o: src/Peca.cpp
+	$(CPP) -c src/Peca.cpp -o src/Peca.o $(CXXFLAGS)
+
+src/Veiculo.o: src/Veiculo.cpp
+	$(CPP) -c src/Veiculo.cpp -o src/Veiculo.o $(CXXFLAGS)
