@@ -173,7 +173,7 @@ void menuPecas() {
 
 void menuOS() {
     while (true) {
-        cout << "\n--- Ordens de Servico ---\n1 - Abrir OS\n2 - Adicionar Item à OS\n3 - Calcular Valor OS\n4 - Fechar OS\n5 - Listar OS\n0 - Voltar\nEscolha: ";
+        cout << "\n--- Ordens de Servico ---\n1 - Abrir OS\n2 - Adicionar Item a OS\n3 - Calcular Valor OS\n4 - Fechar OS\n5 - Listar OS\n0 - Voltar\nEscolha: ";
         int op; if (!(cin >> op)) { clearCin(); continue; }
         clearCin();
         if (op == 0) break;
